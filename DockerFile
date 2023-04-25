@@ -1,0 +1,10 @@
+FROM node:current-alpine3.16
+
+WORKDIR /app
+
+RUN apk update && \
+    npx nuxi init LPMS && \
+    yarn install
+
+ENV HOST 0.0.0.0
+EXPOSE 3000
